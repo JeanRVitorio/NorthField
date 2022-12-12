@@ -2,7 +2,7 @@ let ShoppingCart = document.getElementById("shopping-cart");
 let label = document.getElementById("label");
 
 /**
--->Basket to hold all the selected items - Cesta para armazenar todos os itens selecionados a parte getItem está recuperando dados do armazenamento local se o armazenamento local estiver em branco, a cesta se tornará uma matriz vazia
+-->Cesta para armazenar todos os itens selecionados a parte getItem está recuperando dados do armazenamento local se o armazenamento local estiver em branco, a cesta se tornará uma matriz vazia
 */
 
 let basket = JSON.parse(localStorage.getItem("data")) || [];
@@ -66,51 +66,6 @@ let generateCartItems = () => {
     `;
     }
 };
-
-/**
-<div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col">
-    <div class="card">
-      <img src="${img}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{name}</h5>
-        <p class="card-text">R$ ${price}</p>
-        <i onclick="removeItem(${id})" class="bi bi-x-lg"></i>
-        <div class="cart-buttons">
-            <div class="buttons">
-                <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
-                <div id=${id} class="quantity">Quantidade: ${item}</div>
-                <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
-            </div>
-            </div>
-            <h3>R$ ${item * price}</h3>
-      </div>
-    </div>
-  </div>
-  -----
-  <div class="card">
-        <div class="cart-item">
-            <img width="100" src=${img} alt="" class="img-fluid" />
-            <div class="details">
-            <div class="title-price-x">
-                <h4 class="title-price">
-                <p>${name}</p>
-                <p class="cart-item-price">R$ ${price}</p>
-                </h4>
-                <i onclick="removeItem(${id})" class="bi bi-x-lg"></i>
-            </div>
-            <div class="cart-buttons">
-            <div class="buttons">
-                <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
-                <div id=${id} class="quantity">Quantidade: ${item}</div>
-                <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
-            </div>
-            </div>
-            <h3>R$ ${item * price}</h3>
-            </div>
-        </div>
-        </div>
- */
 
 generateCartItems();
 
